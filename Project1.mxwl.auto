@@ -784,7 +784,7 @@ $begin 'AnsoftProject'
 		'Allow Material Override'=false
 		$begin 'TemperatureSettings'
 			IncludeTemperatureDependence=false
-			Temperatures(428, '22cel')
+			Temperatures(459, '22cel')
 		$end 'TemperatureSettings'
 		ObjsEnabledForDeformation()
 		PerfectConductorThreshold=100000000000
@@ -816,7 +816,7 @@ $begin 'AnsoftProject'
 			WorkingCS=1
 			$begin 'GeometryCore'
 				BlockVersionID=3
-				DataVersion=18
+				DataVersion=19
 				NativeKernel='ACIS'
 				NativeKernelVersionID=5
 				Units='mm'
@@ -833,7 +833,7 @@ $begin 'AnsoftProject'
 							IDServerObjectTypeID=0
 							IDServerRangeMin=0
 							IDServerRangeMax=2146483647
-							NextUniqueID=458
+							NextUniqueID=467
 							MoveBackwards=false
 						$end 'AnsoftRangedIDServer'
 						$begin 'AnsoftRangedIDServer'
@@ -1032,7 +1032,7 @@ $begin 'AnsoftProject'
 										KernelVersion=5
 										XPosition='0mm'
 										YPosition='0mm'
-										ZPosition='(100 - 0.035) mm'
+										ZPosition='(48 - 0.035) mm'
 										XSize='100mm'
 										YSize='100mm'
 										ZSize='0.035mm'
@@ -1084,7 +1084,7 @@ $begin 'AnsoftProject'
 										KernelVersion=5
 										XPosition='0mm'
 										YPosition='0mm'
-										ZPosition='100mm'
+										ZPosition='48mm'
 										XSize='100mm'
 										YSize='100mm'
 										ZSize='0.5mm'
@@ -1136,7 +1136,7 @@ $begin 'AnsoftProject'
 										KernelVersion=5
 										XPosition='0mm'
 										YPosition='0mm'
-										ZPosition='(100 + 0.5) mm'
+										ZPosition='(48 + 0.5) mm'
 										XSize='100mm'
 										YSize='100mm'
 										ZSize='0.035mm'
@@ -1161,6 +1161,59 @@ $begin 'AnsoftProject'
 										NumNewFaces=6
 										NumNewEdges=12
 										NumNewVertices=8
+										FaceNameAndIDMap()
+										EdgeNameAndIDMap()
+										VertexNameAndIDMap()
+									$end 'OperationIdentity'
+								$end 'Operation'
+							$end 'Operations'
+						$end 'GeometryPart'
+						$begin 'GeometryPart'
+							$begin 'Attributes'
+								Name='Cylinder1'
+								Flags=''
+								Color='(132 132 193)'
+								Transparency=0
+								PartCoordinateSystem=1
+								UDMId=-1
+								MaterialValue='"vacuum"'
+								SolveInside=true
+							$end 'Attributes'
+							$begin 'Operations'
+								$begin 'Operation'
+									OperationType='Cylinder'
+									ID=458
+									ReferenceCoordSystemID=1
+									$begin 'CylinderParameters'
+										KernelVersion=5
+										XCenter='0mm'
+										YCenter='0mm'
+										ZCenter='100mm'
+										Radius='10mm'
+										Height='10mm'
+										WhichAxis='Z'
+										NumSides='0'
+									$end 'CylinderParameters'
+									ParentPartID=459
+									IsSuppressed=false
+									$begin 'OperationIdentity'
+										$begin 'Topology'
+											NumLumps=1
+											NumShells=1
+											NumFaces=3
+											NumWires=0
+											NumLoops=4
+											NumCoedges=4
+											NumEdges=2
+											NumVertices=2
+										$end 'Topology'
+										BodyID=459
+										StartFaceID=460
+										StartEdgeID=463
+										StartVertexID=465
+										NumNewFaces=3
+										NumNewEdges=2
+										NumNewVertices=2
 										FaceNameAndIDMap()
 										EdgeNameAndIDMap()
 										VertexNameAndIDMap()
@@ -1206,6 +1259,9 @@ $begin 'AnsoftProject'
 						$begin 'box'
 							box(1, 3, 4, 5, 6)
 						$end 'box'
+						$begin 'cylinder'
+							cylinder(1)
+						$end 'cylinder'
 						$begin 'global'
 							global(-1)
 						$end 'global'
@@ -1245,6 +1301,11 @@ $begin 'AnsoftProject'
 						DependencyObject('GeometryBodyOperation', 427)
 						DependencyObject('CoordinateSystem', 1)
 					$end 'DependencyInformation'
+					$begin 'DependencyInformation'
+						NumParents=1
+						DependencyObject('GeometryBodyOperation', 458)
+						DependencyObject('CoordinateSystem', 1)
+					$end 'DependencyInformation'
 				$end 'GeometryDependencies'
 			$end 'GeometryCore'
 			GroupByMaterial('-1'=true)
@@ -1256,7 +1317,7 @@ $begin 'AnsoftProject'
 			$begin 'GlobalBoundData'
 			$end 'GlobalBoundData'
 			$begin 'Boundaries'
-				NextUniqueID=21
+				NextUniqueID=23
 				MoveBackwards=false
 				$begin 'Voltage1'
 					ID=18
@@ -1274,6 +1335,22 @@ $begin 'AnsoftProject'
 					Voltage='0V'
 					CoordinateSystem=-1
 				$end 'Voltage3'
+				$begin 'Voltage4'
+					ID=21
+					BoundType='Voltage'
+					Objects(372)
+					ParentBndID=-1
+					Voltage='-14.4kV'
+					CoordinateSystem=-1
+				$end 'Voltage4'
+				$begin 'Voltage5'
+					ID=22
+					BoundType='Voltage'
+					Objects(428)
+					ParentBndID=-1
+					Voltage='(-14.4 + 0.096) kV'
+					CoordinateSystem=-1
+				$end 'Voltage5'
 			$end 'Boundaries'
 			$begin 'ProductSpecificData'
 			$end 'ProductSpecificData'
@@ -1423,12 +1500,12 @@ $begin 'AnsoftProject'
 				$end 'Solution'
 			$end 'SimSetup'
 			$begin 'Version ID Map'
-				V=411
+				V=422
 				$begin 'Setup'
 					N='Setup1'
-					V=411
-					Soln(N='AdaptivePass', V=412)
-					Soln(N='LastAdaptive', V=412)
+					V=422
+					Soln(N='AdaptivePass', V=422)
+					Soln(N='LastAdaptive', V=422)
 				$end 'Setup'
 			$end 'Version ID Map'
 			$begin 'ID Map'
