@@ -1,17 +1,17 @@
 $begin 'ConnectionParameters'
-	DesktopProcessID=11180
+	DesktopProcessID=6868
 	DesktopProcessPath='C:\\Program Files\\AnsysEM\\Maxwell16.0\\Win64\\maxwell.exe'
 	LaunchedByWB=false
 	$begin 'DesktopStubBlock'
 		$begin 'CommDetails'
 			TransportType=1
-			IPAddress='192.168.163.68'
-			ListenPort='57386'
-			IPAddressVector[1: '192.168.56.1']
+			IPAddress='192.168.255.12'
+			ListenPort='50213'
+			IPAddressVector[2: '192.168.163.68', '192.168.56.1']
 		$end 'CommDetails'
 		$begin 'Marshall'
 			InstanceID=503
-			ProcID=11180
+			ProcID=6868
 			InterfaceID=1
 			FactoryIntID='DesktopInterfaceForWBProxyStubFactory'
 		$end 'Marshall'
@@ -19,13 +19,13 @@ $begin 'ConnectionParameters'
 	$begin 'DesktopBackgroundObjStubBlock'
 		$begin 'CommDetails'
 			TransportType=1
-			IPAddress='192.168.163.68'
-			ListenPort='57386'
-			IPAddressVector[1: '192.168.56.1']
+			IPAddress='192.168.255.12'
+			ListenPort='50213'
+			IPAddressVector[2: '192.168.163.68', '192.168.56.1']
 		$end 'CommDetails'
 		$begin 'Marshall'
 			InstanceID=505
-			ProcID=11180
+			ProcID=6868
 			InterfaceID=2
 			FactoryIntID='DesktopInterfaceForWBProxyStubFactory'
 		$end 'Marshall'
